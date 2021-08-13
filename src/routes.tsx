@@ -6,6 +6,7 @@ const Routes = (): JSX.Element => {
 
   return (
     <Switch>
+      <Route path="/" exact component={Todos} />
       <Route path="/todos" exact component={Todos} />
       <Route path="/users" component={Users} />
     </Switch>
