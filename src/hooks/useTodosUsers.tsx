@@ -24,6 +24,7 @@ export function TodosUsersProvider({ children }: TodosUsersProviderProps): JSX.E
       const formattedUsersData = Object.values(usersData).map(element => {
         let newUserElement: User = {
           props: {
+            id: element.id,
             name: element.name,
             email: element.email,
             website: element.website,
@@ -51,6 +52,7 @@ export function TodosUsersProvider({ children }: TodosUsersProviderProps): JSX.E
 
         let newTodoElement: Todo = {
           props: {
+            id: element.id,
             title: element.title,
             userName: user[1],
             completed: element.completed

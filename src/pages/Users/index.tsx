@@ -12,7 +12,7 @@ const Users = (): JSX.Element => {
 
       <div className="users">
         {users.map(user => (
-          <UserCard key={user.props.name} props={user.props}/>
+          <UserCard key={user.props.id.toString()} props={user.props}/>
         ))}
       </div>
 

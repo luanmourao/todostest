@@ -12,7 +12,7 @@ const Todos = (): JSX.Element => {
 
       <div className="cards">
         {todos.map(todo => (
-          <TodoCard key={todo.props.title} props={todo.props} />
+          <TodoCard key={todo.props.id.toString()} props={todo.props} />
         ))}
       </div>
     </Container>
