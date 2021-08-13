@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 264px;
-  height: 96px;
+  min-height: 120px;
   background-color: var(--card-bg);
   border-radius: 5px;
   padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   div {
     height: 6px;

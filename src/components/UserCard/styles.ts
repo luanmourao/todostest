@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 254px;
-  height: 284px;
+  min-height: 284px;
   background-color: var(--card-bg);
   border-radius: 5px;
   padding: 18px 18px;
 
-  div.users-card {
+  > div.users-card {
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,10 +17,10 @@ export const Container = styled.div`
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
 
       p {
-        line-height: 28px;
+        line-height: 26px;
       }
     }
 
@@ -29,12 +29,17 @@ export const Container = styled.div`
 
       p {
         text-align: center;
-        line-height: 28px;
+        line-height: 26px;
       }
     }
 
+    > div:last-child {
+      margin-top: auto;
+      width: 100%;
+    }
+
     button {
-      width: 207px;
+      width: 100%;
       height: 32px;
       color: whitesmoke;
       background-color: var(--blue);
@@ -54,5 +59,6 @@ export const Container = styled.div`
     border-radius: 50%;
     background-color: #c4c4c4;
     margin-right: 20px;
+    padding: 20px;
   }
 `;
