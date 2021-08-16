@@ -46,9 +46,7 @@ export function TodosUsersProvider({ children }: TodosUsersProviderProps): JSX.E
       const todosData = await api.get('/todos').then(response => response);
 
       const formattedTodosData = Object.values(todosData).map(async element => {
-        const userPromise = api.get(`/users/${element.userId}`).then(response => response);
-
-        const user: any = await Promise.resolve(userPromise);
+        const user: any = await api.get(`/users/${element.userId}`).then(response => response);
 
         let newTodoElement: Todo = {
           props: {
@@ -62,9 +60,9 @@ export function TodosUsersProvider({ children }: TodosUsersProviderProps): JSX.E
         return newTodoElement;
       });
 
-      const formattedTodosData2 = await Promise.all(formattedTodosData);
+      const resolvedFormattedTodosData = await Promise.all(formattedTodosData);
 
-      setTodos(formattedTodosData2);
+      setTodos(resolvedFormattedTodosData);
     }
 
     getUsersData();
